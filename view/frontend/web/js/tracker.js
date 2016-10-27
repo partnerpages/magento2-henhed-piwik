@@ -1,20 +1,20 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 define([
@@ -72,7 +72,7 @@ define([
      *
      * @type {Object}
      */
-    var storage = $.initNamespaceStorage('henhed-piwik').localStorage;
+    var storage = $.initNamespaceStorage('partnerpages-piwik').localStorage;
 
     /**
      * Append Piwik tracker script URL to head
@@ -207,7 +207,7 @@ define([
      * Callback for cart customer data subscriber
      *
      * @param {Object} cart
-     * @see \Henhed\Piwik\CustomerData\Checkout\CartPlugin
+     * @see \Partnerpages\Piwik\CustomerData\Checkout\CartPlugin
      */
     function cartUpdated(cart) {
 
@@ -263,6 +263,6 @@ define([
         push: pushAction,
         // Entrypoint called with options from piwik.phtml
         // @see /lib/web/mage/apply/main.js:init
-        'Henhed_Piwik/js/tracker': initialize
+        'Partnerpages_Piwik/js/tracker': initialize
     };
 });

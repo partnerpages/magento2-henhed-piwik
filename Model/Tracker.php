@@ -2,23 +2,23 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Model;
+namespace Partnerpages\Piwik\Model;
 
 /**
  * Piwik tracker model
@@ -257,24 +257,24 @@ class Tracker
     /**
      * Action items
      *
-     * @var \Henhed\Piwik\Model\Tracker\Action[] $_actions
+     * @var \Partnerpages\Piwik\Model\Tracker\Action[] $_actions
      */
     protected $_actions = [];
 
     /**
      * Tracker action factory instance
      *
-     * @var \Henhed\Piwik\Model\Tracker\ActionFactory $_actionFactory
+     * @var \Partnerpages\Piwik\Model\Tracker\ActionFactory $_actionFactory
      */
     protected $_actionFactory;
 
     /**
      * Constructor
      *
-     * @param \Henhed\Piwik\Model\Tracker\ActionFactory $actionFactory
+     * @param \Partnerpages\Piwik\Model\Tracker\ActionFactory $actionFactory
      */
     public function __construct(
-        \Henhed\Piwik\Model\Tracker\ActionFactory $actionFactory
+        \Partnerpages\Piwik\Model\Tracker\ActionFactory $actionFactory
     ) {
         $this->_actionFactory = $actionFactory;
     }
@@ -282,8 +282,8 @@ class Tracker
     /**
      * Push an action to this tracker
      *
-     * @param \Henhed\Piwik\Model\Tracker\Action $action
-     * @return \Henhed\Piwik\Model\Tracker
+     * @param \Partnerpages\Piwik\Model\Tracker\Action $action
+     * @return \Partnerpages\Piwik\Model\Tracker
      */
     public function push(Tracker\Action $action)
     {
@@ -294,7 +294,7 @@ class Tracker
     /**
      * Get all actions in this tracker
      *
-     * @return \Henhed\Piwik\Model\Tracker\Action[]
+     * @return \Partnerpages\Piwik\Model\Tracker\Action[]
      */
     public function getActions()
     {
@@ -320,7 +320,7 @@ class Tracker
      *
      * @param string $name
      * @param array $arguments
-     * @return \Henhed\Piwik\Model\Tracker
+     * @return \Partnerpages\Piwik\Model\Tracker
      */
     public function __call($name, $arguments)
     {

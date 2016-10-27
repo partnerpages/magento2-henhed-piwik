@@ -2,29 +2,29 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Test\Unit\Helper;
+namespace Partnerpages\Piwik\Test\Unit\Helper;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 use Magento\Store\Model\ScopeInterface;
 
 /**
- * Test for \Henhed\Piwik\Helper\Data
+ * Test for \Partnerpages\Piwik\Helper\Data
  *
  */
 class DataTest extends \PHPUnit_Framework_TestCase
@@ -33,7 +33,7 @@ class DataTest extends \PHPUnit_Framework_TestCase
     /**
      * Piwik data helper (test subject) instance
      *
-     * @var \Henhed\Piwik\Helper\Data $_helper
+     * @var \Partnerpages\Piwik\Helper\Data $_helper
      */
     protected $_helper;
 
@@ -59,7 +59,7 @@ class DataTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $className = '\Henhed\Piwik\Helper\Data';
+        $className = '\Partnerpages\Piwik\Helper\Data';
         $objectManager = new ObjectManager($this);
         $arguments = $objectManager->getConstructArguments($className);
         $this->_helper = $objectManager->getObject($className, $arguments);
@@ -89,11 +89,11 @@ class DataTest extends \PHPUnit_Framework_TestCase
             ->method('isSetFlag')
             ->will($this->returnValueMap([
                 [
-                    \Henhed\Piwik\Helper\Data::XML_PATH_ENABLED,
+                    \Partnerpages\Piwik\Helper\Data::XML_PATH_ENABLED,
                     $scope, $store, $enabled
                 ],
                 [
-                    \Henhed\Piwik\Helper\Data::XML_PATH_LINK_ENABLED,
+                    \Partnerpages\Piwik\Helper\Data::XML_PATH_LINK_ENABLED,
                     $scope, $store, $linkEnabled
                 ]
             ]));
@@ -103,15 +103,15 @@ class DataTest extends \PHPUnit_Framework_TestCase
             ->method('getValue')
             ->will($this->returnValueMap([
                 [
-                    \Henhed\Piwik\Helper\Data::XML_PATH_HOSTNAME,
+                    \Partnerpages\Piwik\Helper\Data::XML_PATH_HOSTNAME,
                     $scope, $store, $hostname
                 ],
                 [
-                    \Henhed\Piwik\Helper\Data::XML_PATH_SITE_ID,
+                    \Partnerpages\Piwik\Helper\Data::XML_PATH_SITE_ID,
                     $scope, $store, $siteId
                 ],
                 [
-                    \Henhed\Piwik\Helper\Data::XML_PATH_LINK_DELAY,
+                    \Partnerpages\Piwik\Helper\Data::XML_PATH_LINK_DELAY,
                     $scope, $store, $linkDelay
                 ]
             ]));
@@ -133,7 +133,7 @@ class DataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test \Henhed\Piwik\Helper\Data::isTrackingEnabled
+     * Test \Partnerpages\Piwik\Helper\Data::isTrackingEnabled
      *
      * Also covers `getHostname' and `getSiteId'
      *
@@ -167,7 +167,7 @@ class DataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test \Henhed\Piwik\Helper\Data::getBaseUrl
+     * Test \Partnerpages\Piwik\Helper\Data::getBaseUrl
      *
      * Also covers `getHostname'
      *
@@ -212,7 +212,7 @@ class DataTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test \Henhed\Piwik\Helper\Data::isLinkTrackingEnabled
+     * Test \Partnerpages\Piwik\Helper\Data::isLinkTrackingEnabled
      *
      * Also covers `isTrackingEnabled'
      *

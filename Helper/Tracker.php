@@ -2,25 +2,25 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Helper;
+namespace Partnerpages\Piwik\Helper;
 
-use Henhed\Piwik\Model\Tracker as TrackerModel;
+use Partnerpages\Piwik\Model\Tracker as TrackerModel;
 use Magento\Quote\Model\Quote;
 
 /**
@@ -35,8 +35,8 @@ class Tracker extends \Magento\Framework\App\Helper\AbstractHelper
      * Push `addEcommerceItem' with quote item data to given tracker
      *
      * @param \Magento\Quote\Model\Quote\Item $item
-     * @param \Henhed\Piwik\Model\Tracker $tracker
-     * @return \Henhed\Piwik\Helper\Tracker
+     * @param \Partnerpages\Piwik\Model\Tracker $tracker
+     * @return \Partnerpages\Piwik\Helper\Tracker
      */
     public function addQuoteItem(Quote\Item $item, TrackerModel $tracker)
     {
@@ -56,8 +56,8 @@ class Tracker extends \Magento\Framework\App\Helper\AbstractHelper
      * Push `trackEcommerceCartUpdate' with quote data to given tracker
      *
      * @param \Magento\Quote\Model\Quote $quote
-     * @param \Henhed\Piwik\Model\Tracker $tracker
-     * @return \Henhed\Piwik\Helper\Tracker
+     * @param \Partnerpages\Piwik\Model\Tracker $tracker
+     * @return \Partnerpages\Piwik\Helper\Tracker
      */
     public function addQuoteTotal(Quote $quote, TrackerModel $tracker)
     {
@@ -69,8 +69,8 @@ class Tracker extends \Magento\Framework\App\Helper\AbstractHelper
      * Push quote contents to given tracker
      *
      * @param \Magento\Quote\Model\Quote $quote
-     * @param \Henhed\Piwik\Model\Tracker $tracker
-     * @return \Henhed\Piwik\Helper\Tracker
+     * @param \Partnerpages\Piwik\Model\Tracker $tracker
+     * @return \Partnerpages\Piwik\Helper\Tracker
      */
     public function addQuote(Quote $quote, TrackerModel $tracker)
     {

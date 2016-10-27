@@ -2,23 +2,23 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Block;
+namespace Partnerpages\Piwik\Block;
 
 /**
  * Piwik page block
@@ -37,14 +37,14 @@ class Piwik extends \Magento\Framework\View\Element\Template
     /**
      * Piwik tracker model
      *
-     * @var \Henhed\Piwik\Model\Tracker $_tracker
+     * @var \Partnerpages\Piwik\Model\Tracker $_tracker
      */
     protected $_tracker;
 
     /**
      * Piwik data helper
      *
-     * @var \Henhed\Piwik\Helper\Data
+     * @var \Partnerpages\Piwik\Helper\Data
      */
     protected $_dataHelper = null;
 
@@ -53,15 +53,15 @@ class Piwik extends \Magento\Framework\View\Element\Template
      *
      * @param \Magento\Framework\View\Element\Template\Context $context
      * @param \Magento\Framework\Json\EncoderInterface $jsonEncoder
-     * @param \Henhed\Piwik\Model\Tracker $tracker
-     * @param \Henhed\Piwik\Helper\Data $dataHelper
+     * @param \Partnerpages\Piwik\Model\Tracker $tracker
+     * @param \Partnerpages\Piwik\Helper\Data $dataHelper
      * @param array $data
      */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Json\EncoderInterface $jsonEncoder,
-        \Henhed\Piwik\Model\Tracker $tracker,
-        \Henhed\Piwik\Helper\Data $dataHelper,
+        \Partnerpages\Piwik\Model\Tracker $tracker,
+        \Partnerpages\Piwik\Helper\Data $dataHelper,
         array $data = []
     ) {
         $this->_jsonEncoder = $jsonEncoder;
@@ -73,7 +73,7 @@ class Piwik extends \Magento\Framework\View\Element\Template
     /**
      * Get Piwik tracker actions
      *
-     * @return \Henhed\Piwik\Model\Tracker
+     * @return \Partnerpages\Piwik\Model\Tracker
      */
     public function getTracker()
     {

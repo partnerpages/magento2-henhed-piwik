@@ -2,28 +2,28 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Test\Unit\Observer;
+namespace Partnerpages\Piwik\Test\Unit\Observer;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
 /**
- * Test for \Henhed\Piwik\Observer\SearchResultObserver
+ * Test for \Partnerpages\Piwik\Observer\SearchResultObserver
  *
  */
 class SearchResultObserverTest extends \PHPUnit_Framework_TestCase
@@ -32,7 +32,7 @@ class SearchResultObserverTest extends \PHPUnit_Framework_TestCase
     /**
      * Search result observer (test subject) instance
      *
-     * @var \Henhed\Piwik\Observer\SearchResultObserver $_observer
+     * @var \Partnerpages\Piwik\Observer\SearchResultObserver $_observer
      */
     protected $_observer;
 
@@ -92,12 +92,12 @@ class SearchResultObserverTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $className = 'Henhed\Piwik\Observer\SearchResultObserver';
+        $className = 'Partnerpages\Piwik\Observer\SearchResultObserver';
         $objectManager = new ObjectManager($this);
         $arguments = $objectManager->getConstructArguments($className);
 
         $this->_trackerMock = $this->getMock(
-            'Henhed\Piwik\Model\Tracker', ['trackSiteSearch'], [], '', false
+            'Partnerpages\Piwik\Model\Tracker', ['trackSiteSearch'], [], '', false
         );
         $arguments['piwikTracker'] = $this->_trackerMock;
         $this->_dataHelperMock = $arguments['dataHelper'];
@@ -122,7 +122,7 @@ class SearchResultObserverTest extends \PHPUnit_Framework_TestCase
 
         $this->_observer = $objectManager->getObject($className, $arguments);
         $this->_piwikBlockMock = $this->getMock(
-            'Henhed\Piwik\Block\Piwik', ['setSkipTrackPageView'], [], '', false
+            'Partnerpages\Piwik\Block\Piwik', ['setSkipTrackPageView'], [], '', false
         );
         $this->_searchResultBlockMock = $this->getMock(
             'Magento\CatalogSearch\Block\Result', [], [], '', false
@@ -173,7 +173,7 @@ class SearchResultObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\SearchResultObserver::execute where
+     * Test for \Partnerpages\Piwik\Observer\SearchResultObserver::execute where
      * the query object does not have a result count.
      *
      * @return void
@@ -215,7 +215,7 @@ class SearchResultObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\SearchResultObserver::execute where
+     * Test for \Partnerpages\Piwik\Observer\SearchResultObserver::execute where
      * the query object does not have a result count and there is no search
      * result block available.
      *
@@ -249,7 +249,7 @@ class SearchResultObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\SearchResultObserver::execute where
+     * Test for \Partnerpages\Piwik\Observer\SearchResultObserver::execute where
      * the query object has a result count.
      *
      * @return void
@@ -291,7 +291,7 @@ class SearchResultObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\SearchResultObserver::execute where
+     * Test for \Partnerpages\Piwik\Observer\SearchResultObserver::execute where
      * tracking is disabled.
      *
      * @return void

@@ -1,6 +1,6 @@
 {
-    "name": "henhed/module-piwik",
-    "description": "Piwik analytics module for Magento 2",
+    "name": "partnerpages/module-piwik",
+    "description": "PartnerPages analytics module for Magento 2",
     "type": "magento2-module",
     "license": [
         "AGPL-3.0+"
@@ -11,7 +11,7 @@
     "autoload": {
         "files": ["registration.php"],
         "psr-4": {
-            "Henhed\\Piwik\\": ""
+            "Partnerpages\\Piwik\\": ""
         }
     }
 }

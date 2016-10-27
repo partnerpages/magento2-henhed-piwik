@@ -2,23 +2,23 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Observer;
+namespace Partnerpages\Piwik\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
 
@@ -33,14 +33,14 @@ class SearchResultObserver implements ObserverInterface
     /**
      * Piwik tracker instance
      *
-     * @var \Henhed\Piwik\Model\Tracker
+     * @var \Partnerpages\Piwik\Model\Tracker
      */
     protected $_piwikTracker;
 
     /**
      * Piwik data helper
      *
-     * @var \Henhed\Piwik\Helper\Data $_dataHelper
+     * @var \Partnerpages\Piwik\Helper\Data $_dataHelper
      */
     protected $_dataHelper;
 
@@ -61,14 +61,14 @@ class SearchResultObserver implements ObserverInterface
     /**
      * Constructor
      *
-     * @param \Henhed\Piwik\Model\Tracker $piwikTracker
-     * @param \Henhed\Piwik\Helper\Data $dataHelper
+     * @param \Partnerpages\Piwik\Model\Tracker $piwikTracker
+     * @param \Partnerpages\Piwik\Helper\Data $dataHelper
      * @param \Magento\Search\Model\QueryFactory $queryFactory
      * @param \Magento\Framework\App\ViewInterface $view
      */
     public function __construct(
-        \Henhed\Piwik\Model\Tracker $piwikTracker,
-        \Henhed\Piwik\Helper\Data $dataHelper,
+        \Partnerpages\Piwik\Model\Tracker $piwikTracker,
+        \Partnerpages\Piwik\Helper\Data $dataHelper,
         \Magento\Search\Model\QueryFactory $queryFactory,
         \Magento\Framework\App\ViewInterface $view
     ) {
@@ -82,7 +82,7 @@ class SearchResultObserver implements ObserverInterface
      * Push `trackSiteSearch' to tracker on search result page
      *
      * @param \Magento\Framework\Event\Observer $observer
-     * @return \Henhed\Piwik\Observer\SearchResultObserver
+     * @return \Partnerpages\Piwik\Observer\SearchResultObserver
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {
@@ -93,7 +93,7 @@ class SearchResultObserver implements ObserverInterface
         $query = $this->_queryFactory->get();
         $piwikBlock = $this->_view->getLayout()->getBlock('piwik.tracker');
         /* @var $query \Magento\Search\Model\Query */
-        /* @var $piwikBlock \Henhed\Piwik\Block\Piwik */
+        /* @var $piwikBlock \Partnerpages\Piwik\Block\Piwik */
 
         $keyword = $query->getQueryText();
         $resultsCount = $query->getNumResults();

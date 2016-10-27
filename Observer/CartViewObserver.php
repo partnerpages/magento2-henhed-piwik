@@ -2,23 +2,23 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Observer;
+namespace Partnerpages\Piwik\Observer;
 
 use Magento\Framework\Event\ObserverInterface;
 
@@ -32,21 +32,21 @@ class CartViewObserver implements ObserverInterface
     /**
      * Piwik tracker instance
      *
-     * @var \Henhed\Piwik\Model\Tracker
+     * @var \Partnerpages\Piwik\Model\Tracker
      */
     protected $_piwikTracker;
 
     /**
      * Tracker helper
      *
-     * @var \Henhed\Piwik\Helper\Tracker $_trackerHelper
+     * @var \Partnerpages\Piwik\Helper\Tracker $_trackerHelper
      */
     protected $_trackerHelper;
 
     /**
      * Piwik data helper
      *
-     * @var \Henhed\Piwik\Helper\Data $_dataHelper
+     * @var \Partnerpages\Piwik\Helper\Data $_dataHelper
      */
     protected $_dataHelper;
 
@@ -60,15 +60,15 @@ class CartViewObserver implements ObserverInterface
     /**
      * Constructor
      *
-     * @param \Henhed\Piwik\Model\Tracker $piwikTracker
-     * @param \Henhed\Piwik\Helper\Tracker $trackerHelper
-     * @param \Henhed\Piwik\Helper\Data $dataHelper
+     * @param \Partnerpages\Piwik\Model\Tracker $piwikTracker
+     * @param \Partnerpages\Piwik\Helper\Tracker $trackerHelper
+     * @param \Partnerpages\Piwik\Helper\Data $dataHelper
      * @param \Magento\Checkout\Model\Session $checkoutSession
      */
     public function __construct(
-        \Henhed\Piwik\Model\Tracker $piwikTracker,
-        \Henhed\Piwik\Helper\Tracker $trackerHelper,
-        \Henhed\Piwik\Helper\Data $dataHelper,
+        \Partnerpages\Piwik\Model\Tracker $piwikTracker,
+        \Partnerpages\Piwik\Helper\Tracker $trackerHelper,
+        \Partnerpages\Piwik\Helper\Data $dataHelper,
         \Magento\Checkout\Model\Session $checkoutSession
     ) {
         $this->_piwikTracker = $piwikTracker;
@@ -81,7 +81,7 @@ class CartViewObserver implements ObserverInterface
      * Push trackEcommerceCartUpdate to tracker on cart view page
      *
      * @param \Magento\Framework\Event\Observer $observer
-     * @return \Henhed\Piwik\Observer\CartViewObserver
+     * @return \Partnerpages\Piwik\Observer\CartViewObserver
      */
     public function execute(\Magento\Framework\Event\Observer $observer)
     {

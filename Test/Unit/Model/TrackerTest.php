@@ -2,29 +2,29 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Test\Unit\Model;
+namespace Partnerpages\Piwik\Test\Unit\Model;
 
-use \Henhed\Piwik\Model\Tracker;
+use \Partnerpages\Piwik\Model\Tracker;
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
 /**
- * Test for \Henhed\Piwik\Model\Tracker
+ * Test for \Partnerpages\Piwik\Model\Tracker
  *
  */
 class TrackerTest extends \PHPUnit_Framework_TestCase
@@ -33,7 +33,7 @@ class TrackerTest extends \PHPUnit_Framework_TestCase
     /**
      * Tracker instance
      *
-     * @var \Henhed\Piwik\Model\Tracker $_tracker
+     * @var \Partnerpages\Piwik\Model\Tracker $_tracker
      */
     protected $_tracker;
 
@@ -51,11 +51,11 @@ class TrackerTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $className = '\Henhed\Piwik\Model\Tracker';
+        $className = '\Partnerpages\Piwik\Model\Tracker';
         $objectManager = new ObjectManager($this);
         $arguments = $objectManager->getConstructArguments($className, [
             'actionFactory' => $this->getMock(
-                'Henhed\Piwik\Model\Tracker\ActionFactory',
+                'Partnerpages\Piwik\Model\Tracker\ActionFactory',
                 ['create'], [], '', false
             )
         ]);

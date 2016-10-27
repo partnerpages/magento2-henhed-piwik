@@ -2,28 +2,28 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Test\Unit\Observer;
+namespace Partnerpages\Piwik\Test\Unit\Observer;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
 /**
- * Test for \Henhed\Piwik\Observer\BeforeTrackPageViewObserver
+ * Test for \Partnerpages\Piwik\Observer\BeforeTrackPageViewObserver
  *
  */
 class BeforeTrackPageViewObserverTest extends \PHPUnit_Framework_TestCase
@@ -32,7 +32,7 @@ class BeforeTrackPageViewObserverTest extends \PHPUnit_Framework_TestCase
     /**
      * Before track page view observer (test subject) instance
      *
-     * @var \Henhed\Piwik\Observer\BeforeTrackPageViewObserver $_observer
+     * @var \Partnerpages\Piwik\Observer\BeforeTrackPageViewObserver $_observer
      */
     protected $_observer;
 
@@ -71,13 +71,13 @@ class BeforeTrackPageViewObserverTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $className = 'Henhed\Piwik\Observer\BeforeTrackPageViewObserver';
+        $className = 'Partnerpages\Piwik\Observer\BeforeTrackPageViewObserver';
         $objectManager = new ObjectManager($this);
         $arguments = $objectManager->getConstructArguments($className);
         $this->_observer = $objectManager->getObject($className, $arguments);
         $this->_dataHelperMock = $arguments['dataHelper'];
         $this->_trackerMock = $this->getMock(
-            'Henhed\Piwik\Model\Tracker',
+            'Partnerpages\Piwik\Model\Tracker',
             ['enableLinkTracking', 'setLinkTrackingTimer'],
             [], '', false
         );
@@ -106,7 +106,7 @@ class BeforeTrackPageViewObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\BeforeTrackPageViewObserver::execute
+     * Test for \Partnerpages\Piwik\Observer\BeforeTrackPageViewObserver::execute
      *
      * @param bool $linkTrackingEnabled
      * @param int $linkTrackingDelay

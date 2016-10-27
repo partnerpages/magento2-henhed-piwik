@@ -2,28 +2,28 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Test\Unit\Observer;
+namespace Partnerpages\Piwik\Test\Unit\Observer;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
 /**
- * Test for \Henhed\Piwik\Observer\CartViewObserver
+ * Test for \Partnerpages\Piwik\Observer\CartViewObserver
  *
  */
 class CartViewObserverTest extends \PHPUnit_Framework_TestCase
@@ -32,7 +32,7 @@ class CartViewObserverTest extends \PHPUnit_Framework_TestCase
     /**
      * Cart view observer (test subject) instance
      *
-     * @var \Henhed\Piwik\Observer\CartViewObserver
+     * @var \Partnerpages\Piwik\Observer\CartViewObserver
      */
     protected $_observer;
 
@@ -85,7 +85,7 @@ class CartViewObserverTest extends \PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $className = 'Henhed\Piwik\Observer\CartViewObserver';
+        $className = 'Partnerpages\Piwik\Observer\CartViewObserver';
         $objectManager = new ObjectManager($this);
         $arguments = $objectManager->getConstructArguments($className);
         $this->_observer = $objectManager->getObject($className, $arguments);
@@ -102,7 +102,7 @@ class CartViewObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\CartViewObserver::execute where
+     * Test for \Partnerpages\Piwik\Observer\CartViewObserver::execute where
      * tracking is enabled.
      *
      * @return void
@@ -123,7 +123,7 @@ class CartViewObserverTest extends \PHPUnit_Framework_TestCase
 
         // Make sure the tracker helpers `addQuote' is called exactly once with
         // provided quote and tracker. Actual behavior of `addQuote' is covered
-        // by \Henhed\Piwik\Test\Unit\Helper\TrackerTest.
+        // by \Partnerpages\Piwik\Test\Unit\Helper\TrackerTest.
         $this->_trackerHelperMock
             ->expects($this->once())
             ->method('addQuote')
@@ -138,7 +138,7 @@ class CartViewObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\CartViewObserver::execute where
+     * Test for \Partnerpages\Piwik\Observer\CartViewObserver::execute where
      * tracking is disabled.
      *
      * @return void

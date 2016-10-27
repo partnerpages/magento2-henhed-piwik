@@ -2,23 +2,23 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\CustomerData\Checkout;
+namespace Partnerpages\Piwik\CustomerData\Checkout;
 
 /**
  * Plugin for \Magento\Checkout\CustomerData\Cart
@@ -37,21 +37,21 @@ class CartPlugin
     /**
      * Piwik data helper
      *
-     * @var \Henhed\Piwik\Helper\Data $_dataHelper
+     * @var \Partnerpages\Piwik\Helper\Data $_dataHelper
      */
     protected $_dataHelper;
 
     /**
      * Tracker helper
      *
-     * @var \Henhed\Piwik\Helper\Tracker $_trackerHelper
+     * @var \Partnerpages\Piwik\Helper\Tracker $_trackerHelper
      */
     protected $_trackerHelper;
 
     /**
      * Tracker factory
      *
-     * @var \Henhed\Piwik\Model\TrackerFactory $_trackerFactory
+     * @var \Partnerpages\Piwik\Model\TrackerFactory $_trackerFactory
      */
     protected $_trackerFactory;
 
@@ -59,15 +59,15 @@ class CartPlugin
      * Constructor
      *
      * @param \Magento\Checkout\Model\Session $checkoutSession
-     * @param \Henhed\Piwik\Helper\Data $dataHelper
-     * @param \Henhed\Piwik\Helper\Tracker $trackerHelper
-     * @param \Henhed\Piwik\Model\TrackerFactory $trackerFactory
+     * @param \Partnerpages\Piwik\Helper\Data $dataHelper
+     * @param \Partnerpages\Piwik\Helper\Tracker $trackerHelper
+     * @param \Partnerpages\Piwik\Model\TrackerFactory $trackerFactory
      */
     public function __construct(
         \Magento\Checkout\Model\Session $checkoutSession,
-        \Henhed\Piwik\Helper\Data $dataHelper,
-        \Henhed\Piwik\Helper\Tracker $trackerHelper,
-        \Henhed\Piwik\Model\TrackerFactory $trackerFactory
+        \Partnerpages\Piwik\Helper\Data $dataHelper,
+        \Partnerpages\Piwik\Helper\Tracker $trackerHelper,
+        \Partnerpages\Piwik\Model\TrackerFactory $trackerFactory
     ) {
         $this->_checkoutSession = $checkoutSession;
         $this->_dataHelper = $dataHelper;

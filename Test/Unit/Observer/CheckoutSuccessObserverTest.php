@@ -2,28 +2,28 @@
 /**
  * Copyright 2016 Henrik Hedelund
  *
- * This file is part of Henhed_Piwik.
+ * This file is part of Partnerpages_Piwik.
  *
- * Henhed_Piwik is free software: you can redistribute it and/or modify
+ * Partnerpages_Piwik is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
- * Henhed_Piwik is distributed in the hope that it will be useful,
+ * Partnerpages_Piwik is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
  * You should have received a copy of the GNU Affero General Public License
- * along with Henhed_Piwik.  If not, see <http://www.gnu.org/licenses/>.
+ * along with Partnerpages_Piwik.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-namespace Henhed\Piwik\Test\Unit\Observer;
+namespace Partnerpages\Piwik\Test\Unit\Observer;
 
 use Magento\Framework\TestFramework\Unit\Helper\ObjectManager;
 
 /**
- * Test for \Henhed\Piwik\Observer\CheckoutSuccessObserver
+ * Test for \Partnerpages\Piwik\Observer\CheckoutSuccessObserver
  *
  */
 class CheckoutSuccessObserverTest extends \PHPUnit_Framework_TestCase
@@ -32,14 +32,14 @@ class CheckoutSuccessObserverTest extends \PHPUnit_Framework_TestCase
     /**
      * Checkout success observer (test subject) instance
      *
-     * @var \Henhed\Piwik\Observer\CheckoutSuccessObserver $_testSubject
+     * @var \Partnerpages\Piwik\Observer\CheckoutSuccessObserver $_testSubject
      */
     protected $_testSubject;
 
     /**
      * Tracker instance
      *
-     * @var \Henhed\Piwik\Model\Tracker $_tracker
+     * @var \Partnerpages\Piwik\Model\Tracker $_tracker
      */
     protected $_tracker;
 
@@ -81,10 +81,10 @@ class CheckoutSuccessObserverTest extends \PHPUnit_Framework_TestCase
         $objectMgr = new ObjectManager($this);
 
         // Create tracker
-        $trackerClass = 'Henhed\Piwik\Model\Tracker';
+        $trackerClass = 'Partnerpages\Piwik\Model\Tracker';
         $trackerArgs = $objectMgr->getConstructArguments($trackerClass, [
             'actionFactory' => $this->getMock(
-                'Henhed\Piwik\Model\Tracker\ActionFactory',
+                'Partnerpages\Piwik\Model\Tracker\ActionFactory',
                 ['create'], [], '', false
             )
         ]);
@@ -92,7 +92,7 @@ class CheckoutSuccessObserverTest extends \PHPUnit_Framework_TestCase
             ->expects($this->any())
             ->method('create')
             ->willReturnCallback(function ($data) {
-                return new \Henhed\Piwik\Model\Tracker\Action(
+                return new \Partnerpages\Piwik\Model\Tracker\Action(
                     $data['name'],
                     $data['args']
                 );
@@ -100,7 +100,7 @@ class CheckoutSuccessObserverTest extends \PHPUnit_Framework_TestCase
         $this->_tracker = $objectMgr->getObject($trackerClass, $trackerArgs);
 
         // Create test subject
-        $className = 'Henhed\Piwik\Observer\CheckoutSuccessObserver';
+        $className = 'Partnerpages\Piwik\Observer\CheckoutSuccessObserver';
         $arguments = $objectMgr->getConstructArguments($className, [
             'orderCollectionFactory' => $this->getMock(
                 'Magento\Sales\Model\ResourceModel\Order\CollectionFactory',
@@ -270,7 +270,7 @@ class CheckoutSuccessObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\CheckoutSuccessObserver::execute where
+     * Test for \Partnerpages\Piwik\Observer\CheckoutSuccessObserver::execute where
      * tracking is enabled.
      *
      * @param array $ordersData
@@ -314,7 +314,7 @@ class CheckoutSuccessObserverTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test for \Henhed\Piwik\Observer\CheckoutSuccessObserver::execute where
+     * Test for \Partnerpages\Piwik\Observer\CheckoutSuccessObserver::execute where
      * tracking is disabled.
      *
      * @return void
