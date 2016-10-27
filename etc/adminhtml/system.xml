@@ -29,7 +29,7 @@
                  showInDefault="1"
                  showInWebsite="1"
                  showInStore="1">
-            <label>Piwik API</label>
+            <label>Partnerpages Piwik API</label>
             <tab>sales</tab>
             <resource>Partnerpages_Piwik::piwik</resource>
             <group id="tracking"
@@ -39,7 +39,7 @@
                    showInDefault="1"
                    showInWebsite="1"
                    showInStore="1">
-                <label>Tracking API</label>
+                <label>PartnerPages Tracking API</label>
                 <field id="enabled"
                        translate="label"
                        type="select"
@@ -58,7 +58,7 @@
                        showInWebsite="1"
                        showInStore="1">
                     <label>Hostname</label>
-                    <comment>Piwik hostname, optionally including a path e.g. piwik.example.com or example.com/piwik</comment>
+                    <comment>PartnerPages hostname, please leave this as track.partnerpages.co</comment>
                     <depends>
                         <field id="enabled">1</field>
                     </depends>
@@ -72,7 +72,7 @@
                        showInWebsite="1"
                        showInStore="1">
                     <label>Site ID</label>
-                    <comment>Listed under Settings/Website in your Piwik administration panel</comment>
+                    <comment>Get your site ID from PartnerPages under 'Your Sites'</comment>
                     <depends>
                         <field id="enabled">1</field>
                     </depends>

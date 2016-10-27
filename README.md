@@ -29,6 +29,11 @@ Finally, enable the module with the Magento CLI tool.
 php bin/magento module:enable Partnerpages_Piwik --clear-static-content
 ```
 
+You may need to run the upgrade to install the required config items
+
+```
+php bin/magento setup:upgrade
+```
 
 Configuration
 -------------
