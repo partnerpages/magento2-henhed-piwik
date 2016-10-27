@@ -91,9 +91,7 @@ var _paq = _paq || [];
 _paq.push(['setDocumentTitle', 'My Custom Title']);
 ```
 
-See the [Piwik Developer Docs][piwik-tracking-api] or the
-[\Partnerpages\Piwik\Model\Tracker][henhed-piwik-tracker] source code for a list of
-all methods available in the Tracking API.
+See the [Piwik Developer Docs][piwik-tracking-api].
 
 
 Disclaimer
@@ -108,10 +106,8 @@ Affero General Public License][agpl] for more details.
     "GNU Affero General Public License"
 [composer]: https://getcomposer.org/
     "Dependency Manager for PHP"
-[download]: https://github.com/henkelund/magento2-henhed-piwik/archive/master.zip
+[download]: https://github.com/partnerpages/magento2-partnerpages/archive/master.zip
     "magento2-henhed-piwik-master"
-[henhed-piwik-tracker]: https://github.com/henkelund/magento2-henhed-piwik/blob/master/Model/Tracker.php
-    "Model/Tracker.php at master"
 [magento]: https://magento.com/
     "eCommerce Software & eCommerce Platform Solutions"
 [piwik]: http://piwik.org/
